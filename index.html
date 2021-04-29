@@ -9,7 +9,46 @@
 </head>
 <body>
     <h1>This is a website</h1>
-    <div id="paragraph"></div>
+
+
+    <div class="dropdowns">
+        <label for="equipment">Choose your equipment:</label>
+        <select name="equipment" id="equipment">
+            <option value="none" id="7">No equipment necessary</option>
+            <option value="kettlebell" id="e10">Kettlebell</option>
+            <option value="dumbbell" id="e3">Dumbbell</option>
+            <option value="barbell" id="e1">Barbell</option>
+            <option value="bench" id="e8">Bench</option>
+            <option value="incline-bench" id="e9">Incline Bench</option>
+            <option value="sz-bar" id="e2">SZ Bar</option>
+            <option value="pull-up-bar" id="e6">Pull-Up Bar</option>
+            <option value="gym-mat" id="e4">Gym Mat</option>
+            <option value="swiss ball" id="e5">Swiss Ball</option>
+        </select>
+        <button id="generateEquipment">Search by Equipment</button>
+        <br />
+        <label for="category">Choose your muscle group:</label>
+        <select name="category" id="category">
+            <option value="abs" id="c10">Abs</option>
+            <option value="arms" id="c8">Arms</option>
+            <option value="back" id="c12">Back</option>
+            <option value="calves" id="c14">Calves</option>
+            <option value="chest" id="c11">Chest</option>
+            <option value="legs" id="c9">Legs</option>
+            <option value="shoulders" id="c13">Shoulders</option>
+        </select>
+        <button id="generateCategory">Search by Category</button>
+    </div>
+    <div id="exerciseDisplay">
+        <p id="nameDisplay"></p>
+        <p id="muscleDisplay"></p>
+        <p id="equipmentDisplay"></p>
+        <p id="descriptionDisplay"></p>
+        <button id="nextWorkout">Next</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="./assets/js/script.js"></script>
 </body>
 </html>
