@@ -6,3 +6,7 @@ a {
     border-radius: 4px;
     background-color: skyblue;
 }
+
+#equipment, #category {
+    display: block;
+}
