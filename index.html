@@ -36,7 +36,41 @@
 
 <!--Empty div section for new code-->
 <div>
-
+    <div class="dropdowns">
+        <label for="equipment">Choose your equipment:</label>
+        <select name="equipment" id="equipment">
+            <option value="" id="anyEquipment">Any</option>
+            <option value="equipment=7" id="none">No equipment necessary</option>
+            <option value="equipment=4" id="gymMat">Gym Mat</option>
+            <option value="equipment=8" id="bench">Bench</option>
+            <option value="equipment=9" id="inclineBench">Incline Bench</option>
+            <option value="equipment=6" id="pullUpBar">Pull-Up Bar</option>
+            <option value="equipment=5" id="swissBall">Swiss Ball</option>
+            <option value="equipment=3" id="dumbbell">Dumbbell</option>
+            <option value="equipment=1" id="barbell">Barbell</option>
+            <option value="equipment=10" id="kettlebell">Kettlebell</option>
+            <option value="equipment=2" id="ezBar">EZ Bar</option>
+        </select>
+        <br />
+        <label for="category">Choose your muscle group:</label>
+        <select name="category" id="category">
+            <option value="" id="anyCategory">Any</option>
+            <option value="category=8" id="arms">Arms</option>
+            <option value="category=9" id="legs">Legs</option>
+            <option value="category=10" id="abs">Abs</option>
+            <option value="category=11" id="chest">Chest</option>
+            <option value="category=12" id="back">Back</option>
+            <option value="category=13" id="shoulders">Shoulders</option>
+            <option value="category=14" id="calves">Calves</option>
+        </select>
+    </div>
+    <div id="exerciseDisplay">
+        <p id="nameDisplay"></p>
+        <p id="muscleDisplay"></p>
+        <p id="equipmentDisplay"></p>
+        <p id="descriptionDisplay"></p>
+        <button id="nextWorkout">Next</button>
+    </div>
 </div>
 
 <!---------------------The Footer Section------------------------->    
@@ -45,6 +79,7 @@
 
 </footer>
 <!------------------End Of The Footer Section--------------------->  
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="./assets/js/script.js"></script>
 <!--link to a third party CSS framework-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
