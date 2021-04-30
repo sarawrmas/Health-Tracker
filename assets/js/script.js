@@ -7,6 +7,7 @@ fetch("https://api.spoonacular.com/recipes/716429/information?apiKey=1010f29a2c0
     });
 
 
+
     // WORKOUT DIV
 
 var i = 0;
@@ -54,6 +55,13 @@ $("#nextWorkout").click(function() {
     displayWorkouts();
 })
 
+    fetch("https://wger.de/api/v2/exercise")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        console.log(data)
+    });
 
 
 // WGER KEY: 73eea4d476af12b2b7d850f419ca2acbf0a6c2c6

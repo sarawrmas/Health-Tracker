@@ -1,3 +1,8 @@
-header {
-    color: red;
+a {
+    width: 17%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: block;
+    border-radius: 4px;
+    background-color: skyblue;
 }
