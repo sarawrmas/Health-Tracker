@@ -8,36 +8,36 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-    <h1>This is a website</h1>
+    <h1>Workout Search</h1>
 
 
     <div class="dropdowns">
         <label for="equipment">Choose your equipment:</label>
         <select name="equipment" id="equipment">
-            <option value="none" id="7">No equipment necessary</option>
-            <option value="kettlebell" id="e10">Kettlebell</option>
-            <option value="dumbbell" id="e3">Dumbbell</option>
-            <option value="barbell" id="e1">Barbell</option>
-            <option value="bench" id="e8">Bench</option>
-            <option value="incline-bench" id="e9">Incline Bench</option>
-            <option value="sz-bar" id="e2">SZ Bar</option>
-            <option value="pull-up-bar" id="e6">Pull-Up Bar</option>
-            <option value="gym-mat" id="e4">Gym Mat</option>
-            <option value="swiss ball" id="e5">Swiss Ball</option>
+            <option value="" id="anyEquipment">Any</option>
+            <option value="equipment=7" id="none">No equipment necessary</option>
+            <option value="equipment=4" id="gymMat">Gym Mat</option>
+            <option value="equipment=8" id="bench">Bench</option>
+            <option value="equipment=9" id="inclineBench">Incline Bench</option>
+            <option value="equipment=6" id="pullUpBar">Pull-Up Bar</option>
+            <option value="equipment=5" id="swissBall">Swiss Ball</option>
+            <option value="equipment=3" id="dumbbell">Dumbbell</option>
+            <option value="equipment=1" id="barbell">Barbell</option>
+            <option value="equipment=10" id="kettlebell">Kettlebell</option>
+            <option value="equipment=2" id="ezBar">EZ Bar</option>
         </select>
-        <button id="generateEquipment">Search by Equipment</button>
         <br />
         <label for="category">Choose your muscle group:</label>
         <select name="category" id="category">
-            <option value="abs" id="c10">Abs</option>
-            <option value="arms" id="c8">Arms</option>
-            <option value="back" id="c12">Back</option>
-            <option value="calves" id="c14">Calves</option>
-            <option value="chest" id="c11">Chest</option>
-            <option value="legs" id="c9">Legs</option>
-            <option value="shoulders" id="c13">Shoulders</option>
+            <option value="" id="anyCategory">Any</option>
+            <option value="category=8" id="arms">Arms</option>
+            <option value="category=9" id="legs">Legs</option>
+            <option value="category=10" id="abs">Abs</option>
+            <option value="category=11" id="chest">Chest</option>
+            <option value="category=12" id="back">Back</option>
+            <option value="category=13" id="shoulders">Shoulders</option>
+            <option value="category=14" id="calves">Calves</option>
         </select>
-        <button id="generateCategory">Search by Category</button>
     </div>
     <div id="exerciseDisplay">
         <p id="nameDisplay"></p>
