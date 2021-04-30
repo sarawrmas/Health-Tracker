@@ -6,7 +6,7 @@ fetch("https://api.spoonacular.com/recipes/716429/information?apiKey=1010f29a2c0
         console.log(data);
     });
 
-    fetch("https://wger.de/api/v2/")
+    fetch("https://wger.de/api/v2/exercise")
     .then(function(response) {
         return response.json();
     })
