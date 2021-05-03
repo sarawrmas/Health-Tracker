@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Tracker</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
     <!--link to a third party CSS framework-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -23,47 +23,51 @@
 <!--------------------Workout Search Section---------------------->
 <section class="container">
     <div class ="row">
-<div class="col s12 m6 l6">
-    <h3>Workout Search</h3>
-    <div class="dropdowns">
-        <label for="equipment">Choose your equipment:</label>
-        <select name="equipment" id="equipment">
-            <option value="" id="anyEquipment">Any</option>
-            <option value="equipment=7" id="none">No equipment necessary</option>
-            <option value="equipment=4" id="gymMat">Gym Mat</option>
-            <option value="equipment=8" id="bench">Bench</option>
-            <option value="equipment=9" id="inclineBench">Incline Bench</option>
-            <option value="equipment=6" id="pullUpBar">Pull-Up Bar</option>
-            <option value="equipment=5" id="swissBall">Swiss Ball</option>
-            <option value="equipment=3" id="dumbbell">Dumbbell</option>
-            <option value="equipment=1" id="barbell">Barbell</option>
-            <option value="equipment=10" id="kettlebell">Kettlebell</option>
-            <option value="equipment=2" id="ezBar">EZ Bar</option>
-        </select>
-        <br />
-        <label for="category">Choose your muscle group:</label>
-        <select name="category" id="category">
-            <option value="" id="anyCategory">Any</option>
-            <option value="category=8" id="arms">Arms</option>
-            <option value="category=9" id="legs">Legs</option>
-            <option value="category=10" id="abs">Abs</option>
-            <option value="category=11" id="chest">Chest</option>
-            <option value="category=12" id="back">Back</option>
-            <option value="category=13" id="shoulders">Shoulders</option>
-            <option value="category=14" id="calves">Calves</option>
-        </select>
+        <div class="col s12 m6 l6 center-align">
+            <h3>Workout Search</h3>
+            <div class="dropdowns">
+                <select id="equipment">
+                    <option class="ghostText">Choose your equipment</option>
+                    <option value="equipment=7" id="none">None</option>
+                    <option value="equipment=4" id="gymMat">Gym Mat</option>
+                    <option value="equipment=8" id="bench">Bench</option>
+                    <option value="equipment=9" id="inclineBench">Incline Bench</option>
+                    <option value="equipment=6" id="pullUpBar">Pull-Up Bar</option>
+                    <option value="equipment=5" id="swissBall">Swiss Ball</option>
+                    <option value="equipment=3" id="dumbbell">Dumbbell</option>
+                    <option value="equipment=1" id="barbell">Barbell</option>
+                    <option value="equipment=10" id="kettlebell">Kettlebell</option>
+                    <option value="equipment=2" id="ezBar">EZ Bar</option>
+                </select>
+                <br />
+
+                <select id="category">
+                    <option class="ghostText">Choose your category</option>
+                    <option value="category=8" id="arms">Arms</option>
+                    <option value="category=9" id="legs">Legs</option>
+                    <option value="category=10" id="abs">Abs</option>
+                    <option value="category=11" id="chest">Chest</option>
+                    <option value="category=12" id="back">Back</option>
+                    <option value="category=13" id="shoulders">Shoulders</option>
+                    <option value="category=14" id="calves">Calves</option>
+                </select>
+            </div>
+            <div id="exerciseDisplay">
+                <p id="nameDisplay"></p>
+                <p id="muscleDisplay"></p>
+                <p id="equipmentDisplay"></p>
+                <p id="descriptionDisplay"></p>
+                <a class="waves-effect waves-light btn" id="nextWorkout">Results</a>
+            </div>
+        </div>
+
+        <div class="col s12 m6 l6 center-align">
+            <h3>Nutrition Search</h3>
+        </div>
     </div>
-    <div id="exerciseDisplay">
-        <p id="nameDisplay"></p>
-        <p id="muscleDisplay"></p>
-        <p id="equipmentDisplay"></p>
-        <p id="descriptionDisplay"></p>
-        <button id="nextWorkout">Next</button>
-    </div>
-</div>
-</div>
 </section>
-<!------------------End of Workout Search Section----------------->
+<!--------------End of Creating The Schedule Section-------------->
+
 
 
 <!---------------------The Footer Section------------------------->    
@@ -72,10 +76,9 @@
 
 </footer>
 <!------------------End Of The Footer Section--------------------->  
-
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="./assets/js/script.js"></script>
 <!--link to a third party CSS framework-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
-</html>>
+</html>
