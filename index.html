@@ -14,20 +14,33 @@
 <!---------------------The Header Section------------------------->
 <header>
 <!--This class container will format the header section-->    
-<div class ="header-container">
+<div class ="header-container green">
     <h1 class="center-align">Health Tracker</h1>
 </div>
 </header>    
 <!------------------End Of The Header Section--------------------->
 
-<!--------------------Workout Search Section---------------------->
-<section class="container">
+<!-----------------Creating The Schedule Section------------------>
+<section class ="container">
     <div class ="row">
         <div class="col s12 m6 l6 center-align">
             <h3>Workout Search</h3>
             <div class="dropdowns">
+                <label for="category">Search By Category:</label>
+                <select id="category">
+                    <option value="" id="anyCategory">Any</option>
+                    <option value="category=8" id="arms">Arms</option>
+                    <option value="category=9" id="legs">Legs</option>
+                    <option value="category=10" id="abs">Abs</option>
+                    <option value="category=11" id="chest">Chest</option>
+                    <option value="category=12" id="back">Back</option>
+                    <option value="category=13" id="shoulders">Shoulders</option>
+                    <option value="category=14" id="calves">Calves</option>
+                </select>
+                <br />
+                <label for="equipment">Search By Equipment:</label>
                 <select id="equipment">
-                    <option class="ghostText">Choose your equipment</option>
+                    <option value ="" id="anyEquipment">Any</option>
                     <option value="equipment=7" id="none">None</option>
                     <option value="equipment=4" id="gymMat">Gym Mat</option>
                     <option value="equipment=8" id="bench">Bench</option>
@@ -39,18 +52,6 @@
                     <option value="equipment=10" id="kettlebell">Kettlebell</option>
                     <option value="equipment=2" id="ezBar">EZ Bar</option>
                 </select>
-                <br />
-
-                <select id="category">
-                    <option class="ghostText">Choose your category</option>
-                    <option value="category=8" id="arms">Arms</option>
-                    <option value="category=9" id="legs">Legs</option>
-                    <option value="category=10" id="abs">Abs</option>
-                    <option value="category=11" id="chest">Chest</option>
-                    <option value="category=12" id="back">Back</option>
-                    <option value="category=13" id="shoulders">Shoulders</option>
-                    <option value="category=14" id="calves">Calves</option>
-                </select>
             </div>
             <div id="exerciseDisplay">
                 <p id="nameDisplay"></p>
@@ -60,16 +61,30 @@
                 <a class="waves-effect waves-light btn" id="nextWorkout">Results</a>
             </div>
         </div>
-<!----------------End of Workout Search Section-------------------->
 
-<!-------------------Nutrition Search Section---------------------->
         <div class="col s12 m6 l6 center-align">
-            <h3>Nutrition Search</h3>
+            
+            <section>
+                <div class="container initial">
+                  <h1 class="brand">Recipe App</h1>
+                  <form>
+                    <input type="text" placeholder="Search Your Recipe...">
+                    <ion-icon name="search"></ion-icon>
+                  </form>
+                  <div class="search-result">
+                
+                  </div>
+                </div>
+              </section>
+            </div>
         </div>
     </div>
-<!----------------End of Nutrition Search Section------------------>
-
-<!----------------------Calendar Section--------------------------->
+</section>
+<!--------------End of Creating The Schedule Section-------------->
+  
+  
+  
+ <!----------------------Calendar Section--------------------------->
     <div class ="col s12 m6 l3 center-align">
         <div class ="col s3 m3 l6 center-align">
             <h2>Click The Link Below To View Your Schedule</h2>
@@ -85,29 +100,18 @@
 </section>    
 <!-----------------End of The Calendar Section-------------------->
 
+
+
 <!---------------------The Footer Section------------------------->    
 <footer>
 
 
 </footer>
-<!------------------End Of The Footer Section--------------------->
-
+<!------------------End Of The Footer Section--------------------->  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <!--link to a third party CSS framework-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 <script src="./assets/js/script.js"></script>
-<!----------------This is the calendar Section-------------------->
-<script>
-    const Calendar = document.querySelector(".calendar-dates");
-    M.Datepicker.init(Calendar,{});
-    //format: 'dd//mmmm/yyyy',
-    //showClearBtn:true,
-    //i18n:{
-       // clear: 'remove', //i18n:{} creates a delete button and you can name it remove instead of 'clear'
-       // done: 'yes',
-       // cancel: 'No',
-    //}
-</script>
-<!---------------This is the calendar Section--------------------->
 </body>
 </html>
