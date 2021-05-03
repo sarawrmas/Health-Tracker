@@ -89,3 +89,15 @@ $("#nextWorkout").click(function() {
 //     method: 'GET',
 //     headers: {'Authorization': 'Token 73eea4d476af12b2b7d850f419ca2acbf0a6c2c6'}
 // }
+
+
+
+    const Calendar = document.querySelector(".calendar-dates");
+    M.Datepicker.init(Calendar,{});
+    //format: 'dd//mmmm/yyyy',
+    //showClearBtn:true,
+    //i18n:{
+       // clear: 'remove', //i18n:{} creates a delete button and you can name it remove instead of 'clear'
+       // done: 'yes',
+       // cancel: 'No',
+    //}
