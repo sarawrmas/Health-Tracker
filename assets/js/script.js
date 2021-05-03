@@ -70,9 +70,7 @@ function displayWorkouts() {
                 $("#exerciseDisplay").html("<p>No more for this category</p>");
                 return;
             }
-            $("#nameDisplay").html("<h2>" + data.results[i].name + "</h2>");
-            $("#muscleDisplay").html("<h3>Workout Type: </h3>" + $("#category option[value=" + "'" + $("#category").val() + "']").text());
-            $("#equipmentDisplay").html("<h3>Equipment needed: </h3>" + $("#equipment option[value=" + "'" + $("#equipment").val() + "']").text());
+            $("#nameDisplay").html("<h2>" + data.results[i].name + "</h2>");            
             $("#descriptionDisplay").html("<h3>Description: </h3>" + data.results[i].description);
         })
 }
@@ -89,3 +87,17 @@ $("#nextWorkout").click(function() {
 //     method: 'GET',
 //     headers: {'Authorization': 'Token 73eea4d476af12b2b7d850f419ca2acbf0a6c2c6'}
 // }
+
+
+
+            // if ($("#category option[value=" + "'" + $("#category").val() + "']").text() === "Any") {
+            //   $("#muscleDisplay").html("<h3>Workout Type: </h3>" + data.results[i].category);
+            // } else {
+            //   $("#muscleDisplay").html("<h3>Workout Type: </h3>" + $("#category option[value=" + "'" + $("#category").val() + "']").text());
+            // }
+
+            // if ($("#equipment option[value=" + "'" + $("#equipment").val() + "']").text() === "Any") {
+            //   $("#equipmentDisplay").html("<h3>Equipment needed: </h3>" + data.results[i].equipment);
+            // } else {
+            //   $("#equipmentDisplay").html("<h3>Equipment needed: </h3>" + $("#equipment option[value=" + "'" + $("#equipment").val() + "']").text());
+            // }
