@@ -90,14 +90,12 @@ $("#nextWorkout").click(function() {
 
 
 
-            // if ($("#category option[value=" + "'" + $("#category").val() + "']").text() === "Any") {
-            //   $("#muscleDisplay").html("<h3>Workout Type: </h3>" + data.results[i].category);
-            // } else {
-            //   $("#muscleDisplay").html("<h3>Workout Type: </h3>" + $("#category option[value=" + "'" + $("#category").val() + "']").text());
-            // }
-
-            // if ($("#equipment option[value=" + "'" + $("#equipment").val() + "']").text() === "Any") {
-            //   $("#equipmentDisplay").html("<h3>Equipment needed: </h3>" + data.results[i].equipment);
-            // } else {
-            //   $("#equipmentDisplay").html("<h3>Equipment needed: </h3>" + $("#equipment option[value=" + "'" + $("#equipment").val() + "']").text());
-            // }
+    const Calendar = document.querySelector(".calendar-dates");
+    M.Datepicker.init(Calendar,{});
+    //format: 'dd//mmmm/yyyy',
+    //showClearBtn:true,
+    //i18n:{
+       // clear: 'remove', //i18n:{} creates a delete button and you can name it remove instead of 'clear'
+       // done: 'yes',
+       // cancel: 'No',
+    //}
