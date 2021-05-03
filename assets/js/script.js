@@ -1,9 +1,3 @@
-
-//const spoonAPIKey = "0a6be704f3e64f798e5655c93053d909";
-//My spoonacular API "https://api.spoonacular.com/recipes/complexSearch?apiKey="
-
-//original API key for spoonacular "https://api.spoonacular.com/recipes/716429/information?apiKey=1010f29a2c0f4171829f1658db29e313&includeNutrition=true."
-
 fetch("https://api.spoonacular.com/recipes/716429/information?apiKey=1010f29a2c0f4171829f1658db29e313&includeNutrition=true.")
     .then(function(response) {
         return response.json();
@@ -14,9 +8,6 @@ fetch("https://api.spoonacular.com/recipes/716429/information?apiKey=1010f29a2c0
 
 
 // WORKOUT DIV
-
-
-
 
 var i = 0;
 
