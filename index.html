@@ -60,25 +60,54 @@
                 <a class="waves-effect waves-light btn" id="nextWorkout">Results</a>
             </div>
         </div>
+<!----------------End of Workout Search Section-------------------->
 
+<!-------------------Nutrition Search Section---------------------->
         <div class="col s12 m6 l6 center-align">
             <h3>Nutrition Search</h3>
         </div>
     </div>
-</section>
-<!--------------End of Creating The Schedule Section-------------->
+<!----------------End of Nutrition Search Section------------------>
 
-
+<!----------------------Calendar Section--------------------------->
+    <div class ="col s12 m6 l3 center-align">
+        <div class ="col s3 m3 l6 center-align">
+            <h2>Click The Link Below To View Your Schedule</h2>
+                <form>
+                    <div class ="input-field">
+                    <!-- <input type="text" class="datepicker" placeholder="Click Here To View Your Calendar"> -->
+                        <a class="waves-effect waves-light calendar-dates btn">View Your Schedule</a>
+                    </div>
+                </form>
+        </div>
+    </div>
+    <div class ="col s12 m3 l3"></div>
+</section>    
+<!-----------------End of The Calendar Section-------------------->
 
 <!---------------------The Footer Section------------------------->    
 <footer>
 
 
 </footer>
-<!------------------End Of The Footer Section--------------------->  
+<!------------------End Of The Footer Section--------------------->
+  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <!--link to a third party CSS framework-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="./assets/js/script.js"></script>
+<!----------------This is the calendar Section-------------------->
+<script>
+    const Calendar = document.querySelector(".calendar-dates");
+    M.Datepicker.init(Calendar,{});
+    //format: 'dd//mmmm/yyyy',
+    //showClearBtn:true,
+    //i18n:{
+       // clear: 'remove', //i18n:{} creates a delete button and you can name it remove instead of 'clear'
+       // done: 'yes',
+       // cancel: 'No',
+    //}
+</script>
+<!---------------This is the calendar Section--------------------->
 </body>
 </html>
