@@ -10,3 +10,16 @@ a {
 #equipment, #category {
     display: block;
 }
+
+.container-initial {
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0884c84f0f18f0808f85e0d80a2c0a5e37d90b32
