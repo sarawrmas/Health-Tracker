@@ -10,3 +10,10 @@ a {
 #equipment, #category {
     display: block;
 }
+
+.container-initial {
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+    overflow-y: scroll;
+}
