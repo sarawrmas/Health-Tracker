@@ -16,7 +16,6 @@ async function fetchAPI() {
   const response = await fetch(baseURL);
   const data = await response.json();
   generateHTML(data.hits);
-  console.log(data);
 }
 
 function generateHTML(results) {
@@ -51,51 +50,47 @@ function generateHTML(results) {
 // WORKOUT DIV
 
 
+var i = -1;
 
-
-var i = 0;
+$("#previousWorkout").hide();
+$("#favoriteWorkout").hide();
 
 function displayWorkouts() {
     fetch("https://wger.de/api/v2/exercise/?language=2&" + $("#equipment").val() + "&" + $("#category").val())
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-            i++;
-            if (data.results.length === 0) {
-                $("#exerciseDisplay").html("<p>No matches found. Try different criteria.</p>");
-                return;
-            }
-            if (data.results.length === i) {
-                $("#exerciseDisplay").html("<p>No more for this category</p>");
-                return;
-            }
-            $("#nameDisplay").html("<h2>" + data.results[i].name + "</h2>");            
-            $("#descriptionDisplay").html("<h3>Description: </h3>" + data.results[i].description);
-        })
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+      if (i === 0) {
+        $("#previousWorkout").hide();
+      }
+      if (i > 0) {
+        $("#previousWorkout").show();
+      }
+      if (i === data.results.length-1) {
+        $("#nextWorkout").hide();
+      } else {
+        $("#nextWorkout").show();
+      }
+
+      $("#nameDisplay").html("<h2>" + data.results[i].name + "</h2>");            
+      $("#descriptionDisplay").html("<h3>Description: </h3>" + data.results[i].description);
+      
+      console.log(data.results[i].name);
+      $("#favoriteWorkout").click(function() {
+        $("#workoutList").append("<p>" + data.results[i].name + "</p>");
+      });
+    })
 }
 
-$("#nextWorkout").click(function() {
-    displayWorkouts();
+$("#previousWorkout").click(function() {
+  i--;
+  displayWorkouts();
 })
 
-// WGER KEY: 73eea4d476af12b2b7d850f419ca2acbf0a6c2c6
-// spoonacular key: 1010f29a2c0f4171829f1658db29e313
+$("#nextWorkout").click(function() {
+  i++;
+  displayWorkouts();
+  $("#favoriteWorkout").show();
+})
 
-// https://wger.de/en/software/api
-//, {
-//     method: 'GET',
-//     headers: {'Authorization': 'Token 73eea4d476af12b2b7d850f419ca2acbf0a6c2c6'}
-// }
-
-
-
-    const Calendar = document.querySelector(".calendar-dates");
-    M.Datepicker.init(Calendar,{});
-    //format: 'dd//mmmm/yyyy',
-    //showClearBtn:true,
-    //i18n:{
-       // clear: 'remove', //i18n:{} creates a delete button and you can name it remove instead of 'clear'
-       // done: 'yes',
-       // cancel: 'No',
-    //}
