@@ -81,6 +81,10 @@ $("#nextWorkout").click(function() {
     displayWorkouts();
 })
 
+
+var calendarDates = document.querySelector("calendar-dates").value;
+
+
 // WGER KEY: 73eea4d476af12b2b7d850f419ca2acbf0a6c2c6
 // spoonacular key: 1010f29a2c0f4171829f1658db29e313
 
