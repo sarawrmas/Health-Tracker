@@ -91,13 +91,14 @@ $("#nextWorkout").click(function() {
 // }
 
 
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("workout", "recipe");
+  // Retrieve
+  document.getElementById("result").innerHTML = localStorage.getItem("workout");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
 
-    const Calendar = document.querySelector(".calendar-dates");
-    M.Datepicker.init(Calendar,{});
-    //format: 'dd//mmmm/yyyy',
-    //showClearBtn:true,
-    //i18n:{
-       // clear: 'remove', //i18n:{} creates a delete button and you can name it remove instead of 'clear'
-       // done: 'yes',
-       // cancel: 'No',
-    //}
+}
