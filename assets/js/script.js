@@ -22,12 +22,13 @@ async function fetchAPI() {
 function generateHTML(results) {
   container.classList.remove("initial");
   let generatedHTML = "";
-  results.map((result) => {
+  results.map((result) => { 
     generatedHTML += `
+    
       <div class="item">
         <img src="${result.recipe.image}" alt="img">
         <div class="flex-container">
-          <h1 class="title">${result.recipe.label}</h1>
+          <h3 class="title">${result.recipe.label}</h3>
           <a class="view-btn" target="_blank" href="${
             result.recipe.url
           }">View Recipe</a>
@@ -40,6 +41,7 @@ function generateHTML(results) {
         }</p>
         <p class="item-data">Health labels: ${result.recipe.healthLabels}</p>
       </div>
+      
     `;
   });
   searchResultDiv.innerHTML = generatedHTML;
