@@ -1,5 +1,5 @@
 a {
-    width: 200px;
+    width: 100px;
     padding: 10px 20px;
     margin: 8px 0;
     display: block;
@@ -9,4 +9,11 @@ a {
 
 #equipment, #category {
     display: block;
+}
+
+.container-initial {
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+    overflow-y: scroll;
 }

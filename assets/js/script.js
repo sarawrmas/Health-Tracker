@@ -21,12 +21,13 @@ async function fetchAPI() {
 function generateHTML(results) {
   container.classList.remove("initial");
   let generatedHTML = "";
-  results.map((result) => {
+  results.map((result) => { 
     generatedHTML += `
+    
       <div class="item">
         <img src="${result.recipe.image}" alt="img">
         <div class="flex-container">
-          <h1 class="title">${result.recipe.label}</h1>
+          <h3 class="title">${result.recipe.label}</h3>
           <a class="view-btn" target="_blank" href="${
             result.recipe.url
           }">View Recipe</a>
@@ -39,6 +40,7 @@ function generateHTML(results) {
         }</p>
         <p class="item-data">Health labels: ${result.recipe.healthLabels}</p>
       </div>
+      
     `;
   });
   searchResultDiv.innerHTML = generatedHTML;
@@ -48,7 +50,6 @@ function generateHTML(results) {
   
 
 // WORKOUT DIV
-
 
 var i = -1;
 
@@ -94,3 +95,13 @@ $("#nextWorkout").click(function() {
   $("#favoriteWorkout").show();
 })
 
+
+
+    const Calendar = document.querySelector(".calendar-dates");
+    M.Datepicker.init(Calendar,{});
+    //format: 'dd//mmmm/yyyy',
+    //showClearBtn:true,
+    //i18n:{
+       // clear: 'remove', //i18n:{} creates a delete button and you can name it remove instead of 'clear'
+       // done: 'yes',
+       // cancel: 'No',
