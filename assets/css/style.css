@@ -1,3 +1,25 @@
-header {
-    color: red;
+a {
+    width: 100px;
+    padding: 10px 20px;
+    margin: 8px 0;
+    display: block;
+    border-radius: 4px;
+    background-color: skyblue;
 }
+
+#equipment, #category {
+    display: block;
+}
+
+.container-initial {
+    width: 600px;
+    height: 400px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+
+<<<<<<< HEAD
+
+=======
+>>>>>>> 0884c84f0f18f0808f85e0d80a2c0a5e37d90b32
