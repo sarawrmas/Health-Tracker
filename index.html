@@ -56,7 +56,7 @@
                 </select>
             </div>
             <div id="exerciseDisplay">
-                <p id="nameDisplay"></p>
+                <p class="nameDisplay"></p>
                 <p id="descriptionDisplay"></p>
                 <p id="buttonDisplay"></p>
                 <a class="waves-effect waves-light btn" id="previousWorkout">Previous</a>
@@ -75,8 +75,7 @@
                     <input type="text" placeholder="Search Your Recipe...">
                     <ion-icon name="search"></ion-icon>
                     </form>
-                    <div class="search-result">
-                    </div>
+                    <div class="search-result"></div>
                 </div>
                 </section>
             </div>
@@ -95,11 +94,13 @@
             <h3>My Favorite Workouts</h3>
             <ul id="workoutListContainer">
             </ul>
+            <a class='waves-effect waves-light btn delete' id="deleteWorkouts">Clear All</a>
         </div>
         <div class ="col s12 m6 center-align" id="userInputWN">
             <h3>My Favorite Recipes</h3>
             <ul id="recipeListContainer">
             </ul>
+            <a class='waves-effect btn delete' id='deleteRecipes'>Clear All</a>
         </div>
     </div>
 
