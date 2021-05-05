@@ -1,10 +1,43 @@
+body {
+    color: white;
+    font-family: copperplate;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, lightgreen, darkgreen, turquoise, teal);
+}
+
+main {
+    flex-grow: 1;
+}
+
 a {
-    width: 100px;
+    width: 300px;
     padding: 10px 20px;
     margin: 8px 0;
     display: block;
     border-radius: 4px;
     background-color: skyblue;
+}
+
+.container {
+    margin-top: 50px;
+    height: 800px;
+}
+
+.header-container {
+    border: 2px dotted white;
+}
+
+h2, h3 {
+    font-size: 30px;
+}
+
+label {
+    color: white;
 }
 
 #equipment, #category {
@@ -13,13 +46,29 @@ a {
 
 .container-initial {
     width: 600px;
-    height: 400px;
+    height: 800px;
     padding: 10px;
-    overflow-y: scroll;
+    overflow: auto;
 }
 
+#workoutDiv {
+    height: 800px;
+    width: 600px;
+    overflow: auto;
+}
 
-<<<<<<< HEAD
+.createdSchedule {
+    margin-top: 50px;
+}
 
-=======
->>>>>>> 0884c84f0f18f0808f85e0d80a2c0a5e37d90b32
+.workoutList, .recipeList {
+    background-color: #26A69A;
+    border: 1px solid white;
+
+    color: white;
+    font-size: 30px;
+}
+
+.workoutList:hover {
+    background-color: red;
+}
