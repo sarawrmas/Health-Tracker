@@ -64,11 +64,18 @@ label {
 .workoutList, .recipeList {
     background-color: #26A69A;
     border: 1px solid white;
-
     color: white;
     font-size: 30px;
 }
 
-.workoutList:hover {
+#workoutListContainer, #recipeListContainer {
+    height: 300px;
+}
+
+.delete {
     background-color: red;
+}
+
+.delete:hover {
+    background-color: lightcoral;
 }
