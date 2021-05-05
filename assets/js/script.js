@@ -88,6 +88,7 @@ function displayWorkouts() {
 
 var workoutArray = [];
 var storageItems = getStorageItems();
+var uniqueKey = "";
 
 for (var e = 0; e < storageItems.length; e++) {
   workoutArray.push(storageItems[e]);

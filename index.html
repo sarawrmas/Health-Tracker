@@ -15,18 +15,17 @@
 <!---------------------The Header Section------------------------->
 <header>
 <!--This class container will format the header section-->    
-<div class ="header-container">
+<div class ="header-container green">
     <h1 class="center-align">Health Tracker</h1>
 </div>
 </header>    
 <!------------------End Of The Header Section--------------------->
 
-<!-----------------Search Section------------------>
-<main>
+<!-----------------Creating The Schedule Section------------------>
 <section class ="container">
     <div class ="row">
-        <div class="col s12 m6 l6 center-align" id="workoutDiv">
-            <h2>Find a Workout</h2>
+        <div class="col s12 m6 l6 center-align">
+            <h3>Workout Search</h3>
             <div class="dropdowns">
                 <label for="category">Search By Category:</label>
                 <select id="category">
@@ -58,24 +57,24 @@
             <div id="exerciseDisplay">
                 <p id="nameDisplay"></p>
                 <p id="descriptionDisplay"></p>
-                <p id="buttonDisplay"></p>
                 <a class="waves-effect waves-light btn" id="previousWorkout">Previous</a>
                 <a class="waves-effect waves-light btn" id="nextWorkout">Next</a>
                 <br />
-                <a class='waves-effect waves-light btn' id='favoriteWorkout'>Add to Favorites</a>
+                <a class="waves-effect waves-light btn" id="favoriteWorkout">Add to Favorites</a>
             </div>
         </div>
 
         <div class="col s12 m6 l6 center-align">
             
             <section>
-                <div class="container-initial">
-                    <h2 class="brand">Find a Recipe</h2>
+                <div class="container initial">
+                    <h1 class="brand">Recipe App</h1>
                     <form>
                     <input type="text" placeholder="Search Your Recipe...">
                     <ion-icon name="search"></ion-icon>
                     </form>
                     <div class="search-result">
+                
                     </div>
                 </div>
                 </section>
@@ -83,47 +82,26 @@
         </div>
     </div>
 </section>
-<!--------------End of Search Section-------------->
+<!--------------End of Creating The Schedule Section-------------->
 
 
-<div class="createdSchedule">
-    <div class="row">
-        <div class ="col s12 m6 center-align" id="userInputDate">
-            <h3>My Favorite Workouts</h3>
-            <ul id="workoutListContainer">
-            </ul>
-        </div>
-        <div class ="col s12 m6 center-align" id="userInputWN">
-            <h3>My Favorite Recipes</h3>
-            <ul id="recipeListContainer">
-            </ul>
+
+<!----------------------Calendar Section--------------------------->
+    <div class ="col s12 m6 l3 center-align">
+        <div class ="col s3 m3 l6 center-align">
         </div>
     </div>
+    <div class ="col s12 m3 l3"></div>
+</section>    
+<!-----------------End of The Calendar Section-------------------->
 
-</div>
-
-
-<!--------------------Display Favorites-------------------->
-<!-- <div class="myFavoriteList">
-    <br>
-    <h2 class="favHeader center-align">Set Your Daily Goals</h2>
-    <div class ="col s12 m6 center-align" id="favoriteWorkoutList">
-        <h3>My Exercise Plan</h3>
-        <ul></ul>
-    </div>
-    <div class ="col s12 m6 center-align" id="favoriteRecipeList">
-        <h3>My Diet Plan</h3>
-        <ul></ul>
-    </div>
-</div> -->
-
-</section>
-</main>
-<!-----------------End of Display Favorites---------------->    
 
 
 <!---------------------The Footer Section------------------------->    
+<footer>
 
+
+</footer>
 <!------------------End Of The Footer Section--------------------->  
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
