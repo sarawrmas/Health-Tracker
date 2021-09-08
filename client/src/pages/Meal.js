@@ -1,6 +1,6 @@
 import React from 'react';
 import M from 'materialize-css';
-import { Button } from 'react-materialize';
+// import { Button } from 'react-materialize';
 
 const Meal = () => {
   const diets = [
@@ -21,7 +21,7 @@ const Meal = () => {
   return (
     <div id="recipeDiv">
       <h2 className="center-align">Plan Meals</h2>
-      <div className="container">
+      {/* <div className="container">
         <div className="row">
             <div className="col s12 m6 l6">
               <label htmlFor="search-term">Search By Keyword</label>
@@ -39,7 +39,7 @@ const Meal = () => {
               </select>
             </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
