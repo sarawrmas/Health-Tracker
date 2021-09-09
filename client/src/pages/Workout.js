@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import M from 'materialize-css';
-// import { displayWorkouts } from '../utils/workoutAPI';
-import { Select, Button } from 'react-materialize';
+// import M from 'materialize-css';
+import { Container, Col, Row, Button, Select } from 'react-materialize';
 
 const Workout = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -14,18 +13,21 @@ const Workout = () => {
     }
   }
 
-  const types = [
-    "Back",
-    "Cardio",
-    "Chest",
-    "Lower Arms",
-    "Lower Legs",
-    "Neck",
-    "Shoulders",
-    "Upper Arms",
-    "Upper Legs",
-    "Waist"
-  ];
+  const muscles = [
+    "Abs",
+    "Biceps",
+    "Calves",
+    "Delts",
+    "Forearms",
+    "Glutes",
+    "Hamstrings",
+    "Lats",
+    "Pectorals",
+    "Quads",
+    "Traps",
+    "Triceps",
+    "Upper Back"
+  ]
 
   const equipment = [
     "Barbell",
@@ -42,13 +44,8 @@ const Workout = () => {
     "Stationary Bike"
   ];
 
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('select');
-    M.FormSelect.init(elems, {});
-  });
-
-  function displayWorkouts(criteria) {
-    fetch(`https://exercisedb.p.rapidapi.com/exercises/${criteria}/${searchTerm}`, {
+  function displayWorkouts(category) {
+    fetch(`https://exercisedb.p.rapidapi.com/exercises/${category}/${searchTerm}`, {
       "method": "GET",
       "headers": {
         "x-rapidapi-host": "exercisedb.p.rapidapi.com",
@@ -67,22 +64,30 @@ const Workout = () => {
   }
 
   return (
-    <div id="workoutDiv">
+    <div>
       <h2 className="center-align">Search Workouts</h2>
-      <div className="container">
-        <div className="row">
-            <div className="col s12 m6 l6">
+      <Container className="center-align">
+        <Row>
+          <Col className="s12 m12 l5">
+            <form className="search-form">
+              <h3>By Target Muscle:</h3>
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
-                {types.map(type =>(
-                  <option value={type.toLowerCase()} key={type}>
-                    {type}
+                {muscles.map(muscle =>(
+                  <option value={muscle.toLowerCase()} key={muscle}>
+                    {muscle}
                   </option>
                 ))}
               </Select>
-              <Button onClick={() => displayWorkouts('bodyPart')}>Search By Type</Button>
-            </div>
-            <div className="col s12 m6 l6">
+              <Button onClick={() => displayWorkouts('target')}>Find</Button>
+            </form>
+          </Col>
+          <Col className="s12 m12 l2">
+            <h3 className="form-separator">OR</h3>
+          </Col>
+          <Col className="s12 m12 l5">
+            <form className="search-form">
+            <h3>By Available Equipment:</h3>
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {equipment.map(name =>(
@@ -91,10 +96,11 @@ const Workout = () => {
                   </option>
                 ))}
               </Select>
-              <Button onClick={() => displayWorkouts('equipment')}>Search By Equipment</Button>
-            </div>
-        </div>
-      </div>
+              <Button onClick={() => displayWorkouts('equipment')}>Find</Button>
+            </form>
+          </Col>
+        </Row>
+      </Container>
     </div>
   )
 }
