@@ -8,7 +8,6 @@ const Workout = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const [currentPage, setCurrentPage] = useState(1);
-  // const [pageLength, setPageLength] = useState(1);
 
   const paginate = (e) => {
     setCurrentPage(e)
@@ -119,7 +118,12 @@ const Workout = () => {
           </Col>
         </Row>
       </Container>
-      <ResultCollection paginate={paginate} resultList={currentResults} resultLength={searchResults.length} searchTerm={searchTerm}/>
+      <ResultCollection
+        paginate={paginate}
+        resultList={currentResults}
+        resultLength={searchResults.length}
+        searchTerm={searchTerm}
+      />
     </div>
   )
 }

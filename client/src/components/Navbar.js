@@ -1,7 +1,13 @@
 import React from 'react';
 import { Navbar, NavItem } from 'react-materialize';
+import M from "materialize-css";
 
 const Nav = () => {
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    M.Collapsible.init(elems, {});
+  });
+
   return (
     <div>
       <Navbar className="teal"

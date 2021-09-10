@@ -12,8 +12,14 @@ function App() {
       <Nav />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/workout-search" component={Workout} />
-        <Route exact path="/meal-planner" component={Meal} />
+        <Route exact
+          path="/workout-search"
+          component={Workout}
+        />
+        <Route exact
+          path="/meal-planner"
+          component={Meal}
+        />
       </Switch>
     </>
     </Router>
