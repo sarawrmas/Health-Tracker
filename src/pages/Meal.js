@@ -105,7 +105,7 @@ const Meal = () => {
             <h3>Search:</h3>
               <TextInput
                 id="food-search"
-                placeholder="Chicken, Lentils, Smoothies..."
+                placeholder="Chicken, Lentils, Smoothie..."
                 onChange={(e) => setSearchInput(e.target.value)}
               />
               <Button>Find</Button>

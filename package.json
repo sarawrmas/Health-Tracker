@@ -1,7 +1,8 @@
 {
-  "name": "client",
+  "name": "health-tracker",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://sarawrmas.github.io/health-tracker",
   "dependencies": {
     "@apollo/client": "^3.4.5",
     "@testing-library/jest-dom": "^5.14.1",
@@ -21,7 +22,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
