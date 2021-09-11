@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Col, Row, Button, Select } from 'react-materialize';
 import ResultCollection from '../components/Collection';
+import { prettifyString } from '../utils/helpers';
 
 const Workout = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,31 +25,31 @@ const Workout = () => {
   }
 
   const searchQuery = [
-    {category: "target", display: "Abs", slug: "abs"},
-    {category: "target", display: "Biceps", slug: "biceps"},
-    {category: "target", display: "Calves", slug: "calves"},
-    {category: "target", display: "Delts", slug: "delts"},
-    {category: "target", display: "Forearms", slug: "forearms"},
-    {category: "target", display: "Glutes", slug: "glutes"},
-    {category: "target", display: "Hamstrings", slug: "hamstrings"},
-    {category: "target", display: "Lats", slug: "lats"},
-    {category: "target", display: "Pectorals", slug: "pectorals"},
-    {category: "target", display: "Quads", slug: "quads"},
-    {category: "target", display: "Traps", slug: "traps"},
-    {category: "target", display: "Triceps", slug: "triceps"},
-    {category: "target", display: "Upper Back", slug: "upper back"},
-    {category: "equipment", display: "Barbell", slug: "barbell"},
-    {category: "equipment", display: "Body Weight", slug: "body weight"},
-    {category: "equipment", display: "Bosu Ball", slug: "bosu ball"},
-    {category: "equipment", display: "Cable", slug: "cable"},
-    {category: "equipment", display: "Dumbbell", slug: "dumbbell"},
-    {category: "equipment", display: "Elliptical Machine", slug: "elliptical machine"},
-    {category: "equipment", display: "EZ Barbell", slug: "ez barbell"},
-    {category: "equipment", display: "Kettlebell", slug: "kettlebell"},
-    {category: "equipment", display: "Medicine Ball", slug: "medicine ball"},
-    {category: "equipment", display: "Resistance Band", slug: "resistance band"},
-    {category: "equipment", display: "Stability Ball", slug: "stability ball"},
-    {category: "equipment", display: "Stationary Bike", slug: "stationary bike"}
+    {category: "target", name: "abs"},
+    {category: "target", name: "biceps"},
+    {category: "target", name: "calves"},
+    {category: "target", name: "delts"},
+    {category: "target", name: "forearms"},
+    {category: "target", name: "glutes"},
+    {category: "target", name: "hamstrings"},
+    {category: "target", name: "lats"},
+    {category: "target", name: "pectorals"},
+    {category: "target", name: "quads"},
+    {category: "target", name: "traps"},
+    {category: "target", name: "triceps"},
+    {category: "target", name: "upper back"},
+    {category: "equipment", name: "barbell"},
+    {category: "equipment", name: "body weight"},
+    {category: "equipment", name: "bosu ball"},
+    {category: "equipment", name: "cable"},
+    {category: "equipment", name: "dumbbell"},
+    {category: "equipment", name: "elliptical machine"},
+    {category: "equipment", name: "ez barbell"},
+    {category: "equipment", name: "kettlebell"},
+    {category: "equipment", name: "medicine ball"},
+    {category: "equipment", name: "resistance band"},
+    {category: "equipment", name: "stability ball"},
+    {category: "equipment", name: "stationary bike"}
   ]
 
   const displayWorkouts = (e) => {
@@ -93,8 +94,8 @@ const Workout = () => {
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {searchQuery.filter(list => list.category === "target").map(muscle =>(
-                  <option value={muscle.slug} key={muscle.slug} category={muscle.category}>
-                    {muscle.display}
+                  <option value={muscle.name} key={muscle.name} category={muscle.category}>
+                    {prettifyString(muscle.name)}
                   </option>
                 ))}
               </Select>
@@ -110,8 +111,8 @@ const Workout = () => {
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {searchQuery.filter(list => list.category === "equipment").map(equipment =>(
-                  <option value={equipment.slug} key={equipment.slug}>
-                    {equipment.display}
+                  <option value={equipment.name} key={equipment.name}>
+                    {prettifyString(equipment.name)}
                   </option>
                 ))}
               </Select>

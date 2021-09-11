@@ -1,3 +1,7 @@
+a:hover {
+  font-style: italic;
+}
+
 .search-form {
   display: flex;
   flex-direction: column;
@@ -15,16 +19,16 @@
 }
 
 .modal-info {
-  text-align: left;
-  margin-left: 30px;
+  font-size: 20px;
+}
+
+.modal-info a {
+  color: palevioletred;
+  line-height: 2.7;
 }
 
 .modal-trigger {
   font-size: 20px;
-}
-
-.modal-trigger:hover {
-  font-style: italic;
 }
 
 @media screen and (max-width:575px) {
@@ -32,85 +36,3 @@
     width: 80%;
   }
 }
-
-/* body {
-  color: white;
-  font-family: copperplate;
-  font-size: 20px;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background-image: linear-gradient(to right, lightgreen, darkgreen, turquoise, teal);
-}
-
-main {
-  flex-grow: 1;
-}
-
-a {
-  width: 300px;
-  padding: 10px 20px;
-  margin: 8px 0;
-  display: block;
-  border-radius: 4px;
-  background-color: skyblue;
-}
-
-.container {
-  margin-top: 50px;
-  height: 800px;
-}
-
-.header-container {
-  border: 2px dotted white;
-}
-
-h2, h3 {
-  font-size: 30px;
-}
-
-label {
-  color: white;
-}
-
-#equipment, #category {
-  display: block;
-}
-
-.container-initial {
-  width: 600px;
-  height: 800px;
-  padding: 10px;
-  overflow: auto;
-}
-
-#workoutDiv, #recipeDiv {
-  height: 800px;
-  width: 600px;
-  overflow: auto;
-}
-
-.createdSchedule {
-  margin-top: 50px;
-}
-
-.workoutList, .recipeList {
-  background-color: #26A69A;
-  border: 1px solid white;
-  color: white;
-  font-size: 30px;
-}
-
-#workoutListContainer, #recipeListContainer {
-  height: 300px;
-}
-
-.delete {
-  background-color: red;
-}
-
-.delete:hover {
-  background-color: lightcoral;
-} */
