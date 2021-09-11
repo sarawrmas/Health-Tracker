@@ -42,7 +42,6 @@ const Meal = () => {
 
   const displayDiet = (e) => {
     e.preventDefault();
-    console.log(searchTerm)
     fetch(`https://api.edamam.com/search?q=${searchTerm}&app_id=4880b60b&app_key=666fc7aae49b7d09c73d7b188e13f80b&from=0&to=100`)
     .then(response => {
       return response.json();
@@ -51,6 +50,13 @@ const Meal = () => {
       console.log(data.hits)
       const results = data.hits.map(result => ({
         name: result.recipe.label,
+        calories: result.recipe.calories / result.recipe.yield,
+        carbs: result.recipe.totalNutrients.CHOCDF.quantity / result.recipe.yield,
+        protein: result.recipe.totalNutrients.PROCNT.quantity / result.recipe.yield,
+        fat: result.recipe.totalNutrients.FAT.quantity / result.recipe.yield,
+        img: result.recipe.image || '',
+        url: result.recipe.url,
+        servings: result.recipe.yield
       }));
       setSearchResults(results)
     })
@@ -118,6 +124,7 @@ const Meal = () => {
         resultList={currentResults}
         resultLength={searchResults.length}
         searchTerm={searchTerm || searchInput}
+        searchType={"meal"}
       />
     </div>
   )

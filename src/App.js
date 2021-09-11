@@ -13,11 +13,11 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact
-          path="/health-tracker/workout-search"
+          path="/workout-search"
           component={Workout}
         />
         <Route exact
-          path="/health-tracker/meal-planner"
+          path="/meal-planner"
           component={Meal}
         />
       </Switch>

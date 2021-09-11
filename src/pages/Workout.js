@@ -70,7 +70,9 @@ const Workout = () => {
           name: result.name,
           id: result.id,
           target: result.target,
-          equipment: result.equipment
+          equipment: result.equipment,
+          bodyPart: result.bodyPart,
+          img: result.gifUrl
         }));
 
         setSearchResults(results)
@@ -123,6 +125,7 @@ const Workout = () => {
         resultList={currentResults}
         resultLength={searchResults.length}
         searchTerm={searchTerm}
+        searchType={"workout"}
       />
     </div>
   )

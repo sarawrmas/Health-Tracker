@@ -1,9 +1,10 @@
 import React from 'react';
-import { Container, Row, Col, Collection, CollectionItem, Pagination } from 'react-materialize';
+import { Container, Row, Col, Collection, CollectionItem, Pagination, Modal, Button } from 'react-materialize';
 import { prettifyString } from '../utils/helpers';
+import ModalDiv from '../components/Modal';
 
 const ResultCollection = (props) => {
-  const { resultList, resultLength, searchTerm, paginate } = props;
+  const { resultList, resultLength, searchTerm, paginate, searchType } = props;
 
   const pageLength = Math.ceil(resultLength / 20)
 
@@ -14,11 +15,17 @@ const ResultCollection = (props) => {
           <Col className="s12 m12 l12">
             <Collection header={`Showing Results for ${prettifyString(searchTerm)}`}>
               {resultList.map(results => (
-                <CollectionItem href={`/${results.id}`} key={results.id}>
-                  {prettifyString(results.name)}
+                <CollectionItem key={results.id}>
+                  <Modal
+                    actions={
+                      <Button modal="close">Close</Button>
+                    }
+                    trigger={<a className="modal-trigger teal-text">{prettifyString(results.name)}</a>}
+                  >
+                    <ModalDiv currentResult={results} type={searchType}/>
+                  </Modal>
                 </CollectionItem>
               ))}
-              
             </Collection>
           </Col>
           <Pagination
@@ -26,10 +33,12 @@ const ResultCollection = (props) => {
               leftBtn=""
               rightBtn=""
               onSelect={paginate}
+              className="purple-text"
             >
           </Pagination>
         </Row>
       </Container>
+
     </div>
   )
 }
