@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Col, Row, Button, Select } from 'react-materialize';
+import { Container, Col, Row, Button, Select, Tabs, Tab } from 'react-materialize';
 import ResultCollection from '../components/Collection';
 import { prettifyString } from '../utils/helpers';
 
@@ -21,7 +21,7 @@ const Workout = () => {
   const handleChange = (e) => {
     e.preventDefault();
     setSearchTerm(e.target.value);
-    setSearchCategory(searchQuery.find(({ slug }) => slug === e.target.value).category)
+    setSearchCategory(searchQuery.find(({ name }) => name === e.target.value).category)
   }
 
   const searchQuery = [
@@ -88,9 +88,11 @@ const Workout = () => {
       <h2 className="center-align">Search Workouts</h2>
       <Container className="center-align">
         <Row>
-          <Col className="s12 m12 l5">
+          <Col s={12} m={12} l={12}>
+          <Tabs className="tabs-fixed-width">
+            <Tab title="Target Muscle">
             <form className="search-form" onSubmit={displayWorkouts}>
-              <h3>By Target Muscle:</h3>
+              <h3>Find an exercise by target muscle:</h3>
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {searchQuery.filter(list => list.category === "target").map(muscle =>(
@@ -101,13 +103,15 @@ const Workout = () => {
               </Select>
               <Button>Find</Button>
             </form>
-          </Col>
-          <Col className="s12 m12 l2">
+            </Tab>
+          {/* </Col>
+          <Col s={12} m={12} l={2}>
             <h3 className="form-separator">OR</h3>
           </Col>
-          <Col className="s12 m12 l5">
+          <Col s={12} m={12} l={5}> */}
+          <Tab title="Equipment">
             <form className="search-form" onSubmit={displayWorkouts}>
-            <h3>By Available Equipment:</h3>
+            <h3>Find an exercise by equipment:</h3>
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {searchQuery.filter(list => list.category === "equipment").map(equipment =>(
@@ -118,6 +122,8 @@ const Workout = () => {
               </Select>
               <Button>Find</Button>
             </form>
+            </Tab>
+            </Tabs>
           </Col>
         </Row>
       </Container>

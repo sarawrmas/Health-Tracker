@@ -1,25 +1,36 @@
 # Health Tracker
 
-## Purpose
-Keep your health on track using our diet and exercise search tools. The workout section lets you search exercises by the equipment you own and your target muscle zone. Results display the name and description of the workout. The nutrition section enables you to search for any recipe by any keyword, ingredient, or diet type. User can then select a link to view the full recipe in a new tab. With results from both sections, the user can select items to save to a list of favorites that persists when the page refreshes.
+## Table of Contents
+* [Deployed](#deployed)
+* [Description](#description)
+* [Technologies](#technologies)
+* [Usage](#usage)
+* [Preview](#preview)
+* [Credits](#credits)
 
-## Built With
+## Deployed
+https://sarawrmas.github.io/health-tracker/
+
+## Description
+Keep your health on track using our all-in-one health tracker tool to find exercises and recipes. This project is a work in progress that is currently being refigured to use React and React-Materialize! Check back soon for updates, including the ability to login, save search results, and make a holistic plan encompassing both diet and exercise choices.
+
+## Technologies
 * React
 * CSS
-* Materialize CSS
+* React-Materialize
 * JavaScript
 * Jquery
 
-## Website
-https://sarawrmas.github.io/health-tracker/
+## Usage
+We will update this as soon as the page is finished. The aim is to be able to navigate between a Workout search page and a Recipe search page, where you can search using specific criteria and then save results to a workout plan.
 
-<!-- ## Preview
-!["screenshot of the webpage"](assets/images/screenshot.png?raw=true) -->
+Check out the gif preview below to see the local version in action!
 
-## Contribution
-* Sara Adamski
-* Marcos Badillo
-* Lane Johnson
-* Bayleigh Walker
+## Preview
+<img src="./public/images/preview.gif" alt="A gif preview of the application" width="500px">
 
-### Est. 2021
+## Credits
+* Sara Adamski - https://github.com/sarawrmas  
+* Marcos Badillo - https://github.com/MBadi089  
+* Lane Johnson - https://github.com/lanejohnson98  
+* Bayleigh Walker - https://github.com/bayleighwalker

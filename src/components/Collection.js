@@ -13,7 +13,9 @@ const ResultCollection = (props) => {
       <Container>
         <Row>
           <Col className="s12 m12 l12">
-            <Collection header={`Showing Results for ${prettifyString(searchTerm)}`}>
+            <Collection
+            // header={`Showing Results for ${prettifyString(searchTerm)}`}
+            >
               {resultList.map(results => (
                 <CollectionItem key={results.id}>
                   <Modal

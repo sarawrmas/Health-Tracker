@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import M from "materialize-css";
-import { Container, Col, Row, Button, Select, TextInput } from 'react-materialize';
+import { Container, Col, Row, Button, Select, TextInput, Tabs, Tab } from 'react-materialize';
 import ResultCollection from '../components/Collection';
 
 const Meal = () => {
@@ -89,7 +89,20 @@ const Meal = () => {
       <h2 className="center-align">Plan Meals</h2>
       <Container className="center-align">
         <Row>
-          <Col className="s12 m12 l5">
+          <Col s={12} m={12} l={12}>
+          <Tabs className="tabs-fixed-width" closeOnClick={false}>
+          <Tab title="Custom Search">
+            <form className="search-form" onSubmit={displaySearch}>
+            <h3>Search:</h3>
+              <TextInput
+                id="food-search"
+                placeholder="Chicken, Lentils, Smoothie..."
+                onChange={(e) => setSearchInput(e.target.value)}
+              />
+              <Button>Find</Button>
+            </form>
+            </Tab>
+            <Tab title="By diet">
             <form className="search-form" onSubmit={displayDiet}>
               <h3>Select from diets:</h3>
               <Select onChange={handleChange} value="">
@@ -102,20 +115,14 @@ const Meal = () => {
               </Select>
               <Button>Find</Button>
             </form>
-          </Col>
-          <Col className="s12 m12 l2">
+            </Tab>
+          {/* </Col>
+          <Col s={12} m={12} l={2}>
             <h3 className="form-separator">OR</h3>
           </Col>
-          <Col className="s12 m12 l5">
-            <form className="search-form" onSubmit={displaySearch}>
-            <h3>Search:</h3>
-              <TextInput
-                id="food-search"
-                placeholder="Chicken, Lentils, Smoothie..."
-                onChange={(e) => setSearchInput(e.target.value)}
-              />
-              <Button>Find</Button>
-            </form>
+          <Col s={12} m={12} l={5}> */}
+
+          </Tabs>
           </Col>
         </Row>
       </Container>
