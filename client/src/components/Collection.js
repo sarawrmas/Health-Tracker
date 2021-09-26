@@ -21,7 +21,7 @@ const ResultCollection = (props) => {
                     actions={
                       <Button modal="close">Close</Button>
                     }
-                    trigger={<a href="#modalId" id="modalId" className="modal-trigger teal-text">{prettifyString(results.name)}</a>}
+                    trigger={<a href="#modalId" id="modalId" className="hover-el teal-text">{prettifyString(results.name)}</a>}
                   >
                     <ModalDiv currentResult={results} type={searchType}/>
                   </Modal>

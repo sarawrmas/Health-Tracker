@@ -1,8 +1,12 @@
-a:hover {
-  font-style: italic;
+* {
+  font-family: 'Quicksand', sans-serif;
 }
 
-.modal-trigger:hover {
+.slider-caption {
+  font-size: 60px;
+}
+
+.hover-el:hover {
   font-style: italic;
 }
 

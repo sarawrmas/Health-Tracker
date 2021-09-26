@@ -1,34 +1,35 @@
 import React from 'react';
-import { Navbar, NavItem } from 'react-materialize';
-import M from "materialize-css";
+import { SideNav, SideNavItem, Navbar } from 'react-materialize'
 import Auth from '../utils/auth';
 
 const Nav = () => {
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.collapsible');
-    M.Collapsible.init(elems, {});
-  });
-
   const logout = (e) => {
     e.preventDefault();
     Auth.logout();
-  };
-
+  }
   return (
     <div>
-      <Navbar className="teal"
-        alignLinks="right"
-        brand={<a href="/">Health Tracker</a>}
-        menuIcon={<img src="https://img.icons8.com/material-outlined/24/000000/menu--v1.png" alt="menu toggle"/>}
-      >
-        {Auth.loggedIn() ? (
-          <NavItem href="/" onClick={logout}>Logout</NavItem>
-        ) : (
-          <NavItem href="/login">Login</NavItem>
-        )}
-
-        <NavItem href="/workout-search">Search Workouts</NavItem>
-        <NavItem href="/meal-planner">Plan Meals</NavItem>
+      <Navbar alignLinks="left" brand={<a href="/" className="hover-el">Health Tracker</a>} centerLogo className="teal">
+        <SideNav trigger={<p className="hover-el">&larr; Menu</p>}>
+          {Auth.loggedIn() ? (
+            <>
+              <SideNavItem
+                user={{
+                  background: "images/heart.jpg",
+                  email: 'email@email.com',
+                  name: 'My Name'
+                }}
+                userView
+              />
+              <SideNavItem href="/" onClick={logout}>Logout</SideNavItem>
+            </>
+          ) : (
+            <SideNavItem href="/login">Login</SideNavItem>
+          )}
+          <SideNavItem divider />
+          <SideNavItem href="/workout-search">Search Workouts</SideNavItem>
+          <SideNavItem href="/meal-planner">Plan Meals</SideNavItem>
+        </SideNav>
       </Navbar>
     </div>
   )
