@@ -13,8 +13,8 @@ const Meal = () => {
     setCurrentPage(e)
   }
 
-  const indexOfLastResult = currentPage * 20; // 20 posts per page
-  const indexOfFirstResult = indexOfLastResult - 20; // 20 posts per page
+  const indexOfLastResult = currentPage * 20; // 20 per page
+  const indexOfFirstResult = indexOfLastResult - 20; // 20 per page
   const currentResults = searchResults.slice(indexOfFirstResult, indexOfLastResult)
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -36,7 +36,6 @@ const Meal = () => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
     setSearchTerm(e.target.value);
   }
 
@@ -47,7 +46,6 @@ const Meal = () => {
       return response.json();
     })
     .then(data => {
-      console.log(data.hits)
       const results = data.hits.map(result => ({
         name: result.recipe.label,
         calories: result.recipe.calories / result.recipe.yield,
@@ -56,7 +54,8 @@ const Meal = () => {
         fat: result.recipe.totalNutrients.FAT.quantity / result.recipe.yield,
         img: result.recipe.image || '',
         url: result.recipe.url,
-        servings: result.recipe.yield
+        servings: result.recipe.yield,
+        id: result.recipe.label + result.recipe.calories
       }));
       setSearchResults(results)
     })
@@ -67,15 +66,21 @@ const Meal = () => {
 
   const displaySearch = (e) => {
     e.preventDefault();
-    console.log(searchInput)
     fetch(`https://api.edamam.com/search?q=${searchInput}&app_id=4880b60b&app_key=666fc7aae49b7d09c73d7b188e13f80b&from=0&to=100`)
     .then(response => {
       return response.json();
     })
     .then(data => {
-      console.log(data.hits)
       const results = data.hits.map(result => ({
         name: result.recipe.label,
+        calories: result.recipe.calories / result.recipe.yield,
+        carbs: result.recipe.totalNutrients.CHOCDF.quantity / result.recipe.yield,
+        protein: result.recipe.totalNutrients.PROCNT.quantity / result.recipe.yield,
+        fat: result.recipe.totalNutrients.FAT.quantity / result.recipe.yield,
+        img: result.recipe.image || '',
+        url: result.recipe.url,
+        servings: result.recipe.yield,
+        id: result.recipe.label + result.recipe.calories
       }));
       setSearchResults(results)
     })
@@ -90,8 +95,8 @@ const Meal = () => {
       <Container className="center-align">
         <Row>
           <Col s={12} m={12} l={12}>
-          <Tabs className="tabs-fixed-width" closeOnClick={false}>
-          <Tab title="Custom Search">
+          <Tabs className="tabs-fixed-width">
+          <Tab idx="meal-search" title="Custom Search">
             <form className="search-form" onSubmit={displaySearch}>
             <h3>Search:</h3>
               <TextInput
@@ -102,7 +107,7 @@ const Meal = () => {
               <Button>Find</Button>
             </form>
             </Tab>
-            <Tab title="By diet">
+            <Tab idx="diet-search" title="By diet">
             <form className="search-form" onSubmit={displayDiet}>
               <h3>Select from diets:</h3>
               <Select onChange={handleChange} value="">
@@ -116,12 +121,6 @@ const Meal = () => {
               <Button>Find</Button>
             </form>
             </Tab>
-          {/* </Col>
-          <Col s={12} m={12} l={2}>
-            <h3 className="form-separator">OR</h3>
-          </Col>
-          <Col s={12} m={12} l={5}> */}
-
           </Tabs>
           </Col>
         </Row>
@@ -130,7 +129,6 @@ const Meal = () => {
         paginate={paginate}
         resultList={currentResults}
         resultLength={searchResults.length}
-        searchTerm={searchTerm || searchInput}
         searchType={"meal"}
       />
     </div>

@@ -66,7 +66,6 @@ const Workout = () => {
         return response.json();
       })
       .then(data => {
-        console.log(data)
         const results = data.map(result => ({
           name: result.name,
           id: result.id,
@@ -90,7 +89,7 @@ const Workout = () => {
         <Row>
           <Col s={12} m={12} l={12}>
           <Tabs className="tabs-fixed-width">
-            <Tab title="Target Muscle">
+            <Tab idx="muscle-search" title="Target Muscle">
             <form className="search-form" onSubmit={displayWorkouts}>
               <h3>Find an exercise by target muscle:</h3>
               <Select onChange={handleChange} value="">
@@ -104,12 +103,7 @@ const Workout = () => {
               <Button>Find</Button>
             </form>
             </Tab>
-          {/* </Col>
-          <Col s={12} m={12} l={2}>
-            <h3 className="form-separator">OR</h3>
-          </Col>
-          <Col s={12} m={12} l={5}> */}
-          <Tab title="Equipment">
+          <Tab idx="equipment-search" title="Equipment">
             <form className="search-form" onSubmit={displayWorkouts}>
             <h3>Find an exercise by equipment:</h3>
               <Select onChange={handleChange} value="">
@@ -131,7 +125,6 @@ const Workout = () => {
         paginate={paginate}
         resultList={currentResults}
         resultLength={searchResults.length}
-        searchTerm={searchTerm}
         searchType={"workout"}
       />
     </div>

@@ -1,14 +1,20 @@
 import React from 'react';
 import { prettifyString } from '../utils/helpers';
 import { Table } from 'react-materialize';
+import M from "materialize-css";
 
 const MealModal = (props) => {
   const { currentResult, type } = props
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    M.Modal.init(elems, {});
+  });
+
   return (
     <div className="center-align modal-div teal-text">
       <h4>{prettifyString(currentResult.name)}</h4>
-      <img src={`${currentResult.img}`}></img>
+      <img src={`${currentResult.img}`} alt={`Preview of ${currentResult.name}`}></img>
       <div className="modal-info">
         {type === "meal" ? (
           <>
@@ -33,13 +39,7 @@ const MealModal = (props) => {
                 </tr>
               </tbody>
             </Table>
-            <a href={`${currentResult.url}`} target="_blank">View full recipe &rarr;</a>
-            {/* <h5>Per Serving:</h5>
-            <p><span>Calories:</span> {Math.ceil(currentResult.calories)}</p>
-            <p><span>Carbs:</span> {Math.ceil(currentResult.carbs)} g</p>
-            <p><span>Protein:</span> {Math.ceil(currentResult.protein)} g</p>
-            <p><span>Fat:</span> {Math.ceil(currentResult.fat)} g</p>
-            <a href={`${currentResult.url}`} target="_blank">View full recipe &rarr;</a> */}
+            <a href={`${currentResult.url}`} target="_blank" rel="noreferrer">View full recipe &rarr;</a>
           </>
         ) : (
           <>
@@ -62,12 +62,8 @@ const MealModal = (props) => {
                 </tr>
               </tbody>
             </Table>
-            {/* <p><span>Target:</span> {prettifyString(currentResult.target)}</p>
-            <p><span>Category:</span> {prettifyString(currentResult.bodyPart)}</p>
-            <p><span>Equipment Needed:</span> {prettifyString(currentResult.equipment)}</p> */}
           </>
         )}
-
       </div>
     </div>
   )

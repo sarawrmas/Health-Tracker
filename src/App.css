@@ -2,6 +2,10 @@ a:hover {
   font-style: italic;
 }
 
+.modal-trigger:hover {
+  font-style: italic;
+}
+
 .search-form {
   display: flex;
   flex-direction: column;
