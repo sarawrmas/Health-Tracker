@@ -7,7 +7,9 @@
 }
 
 .hover-el:hover {
-  font-style: italic;
+  color: #e57373;
+  font-weight: bold;
+  transition: all .3s ease-in-out;
 }
 
 .search-form {
@@ -26,12 +28,17 @@
   margin-top: 50px;
 }
 
+.modal-div h4 {
+  color: teal;
+}
+
 .modal-info {
   font-size: 20px;
+  color: teal;
 }
 
 .modal-info a {
-  color: palevioletred;
+  color: #e57373;
   line-height: 2.7;
 }
 

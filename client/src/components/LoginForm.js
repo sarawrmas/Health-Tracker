@@ -28,11 +28,6 @@ const Login = () => {
     } catch (err) {
       console.error(err);
     }
-
-    // setLoginForm({
-    //   email: '',
-    //   password: ''
-    // });
   };
 
   return (

@@ -12,7 +12,7 @@ const MealModal = (props) => {
   });
 
   return (
-    <div className="center-align modal-div teal-text">
+    <div className="center-align modal-div">
       <h4>{prettifyString(currentResult.name)}</h4>
       <img src={`${currentResult.img}`} alt={`Preview of ${currentResult.name}`}></img>
       <div className="modal-info">
@@ -39,7 +39,7 @@ const MealModal = (props) => {
                 </tr>
               </tbody>
             </Table>
-            <a href={`${currentResult.url}`} target="_blank" rel="noreferrer">View full recipe &rarr;</a>
+            <a href={`${currentResult.url}`} target="_blank" rel="noreferrer" className="hover-el">View full recipe &rarr;</a>
           </>
         ) : (
           <>

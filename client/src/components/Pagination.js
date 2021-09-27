@@ -7,10 +7,6 @@ const Pag = (props) => {
 
   let pageNumbers = [];
 
-  // useEffect(() => {
-  //   setPages(Math.ceil(resultList.length / 20))
-  // })
-
   for(let i = 1; i <= Math.ceil(resultList.length / 20); i++) {
     pageNumbers.push(i)
   }
@@ -19,9 +15,6 @@ const Pag = (props) => {
     <div>
       <Pagination
         items={pages}
-        leftBtn="&larr;"
-        rightBtn="&rarr;"
-        // onSelect={testFunction}
       >
         {pageNumbers.map(number => (
           <li key={number}>

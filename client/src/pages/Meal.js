@@ -91,14 +91,14 @@ const Meal = () => {
 
   return (
     <div>
-      <h2 className="center-align">Plan Meals</h2>
+      <h2 className="center-align teal-text">Plan Meals</h2>
       <Container className="center-align">
         <Row>
           <Col s={12} m={12} l={12}>
           <Tabs className="tabs-fixed-width">
           <Tab idx="meal-search" title="Custom Search">
             <form className="search-form" onSubmit={displaySearch}>
-            <h3>Search:</h3>
+            <h3 className="teal-text">Search:</h3>
               <TextInput
                 id="food-search"
                 placeholder="Chicken, Lentils, Smoothie..."
@@ -109,7 +109,7 @@ const Meal = () => {
             </Tab>
             <Tab idx="diet-search" title="By diet">
             <form className="search-form" onSubmit={displayDiet}>
-              <h3>Select from diets:</h3>
+              <h3 className="teal-text">Select from diets:</h3>
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {diets.map(diet =>(

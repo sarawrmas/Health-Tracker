@@ -91,7 +91,7 @@ const Workout = () => {
           <Tabs className="tabs-fixed-width">
             <Tab idx="muscle-search" title="Target Muscle">
             <form className="search-form" onSubmit={displayWorkouts}>
-              <h3>Find an exercise by target muscle:</h3>
+              <h3 className="teal-text">Find an exercise by target muscle:</h3>
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {searchQuery.filter(list => list.category === "target").map(muscle =>(
@@ -105,7 +105,7 @@ const Workout = () => {
             </Tab>
           <Tab idx="equipment-search" title="Equipment">
             <form className="search-form" onSubmit={displayWorkouts}>
-            <h3>Find an exercise by equipment:</h3>
+            <h3 className="teal-text">Find an exercise by equipment:</h3>
               <Select onChange={handleChange} value="">
                 <option disabled value="" />
                 {searchQuery.filter(list => list.category === "equipment").map(equipment =>(

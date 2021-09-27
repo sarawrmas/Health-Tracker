@@ -5,7 +5,7 @@ import Auth from '../utils/auth';
 import { Button, TextInput } from 'react-materialize';
 
 const Login = () => {
-  const [signupForm, setSignupForm] = useState({ username: '', email: '', password: '' });
+  const [signupForm, setSignupForm] = useState({ firstName: '', lastName: '', email: '', password: '' });
   const [signup, { error }] = useMutation(SIGNUP_USER);
   
   const handleChange = (e) => {
@@ -22,7 +22,10 @@ const Login = () => {
 
     try {
       const { data } = await signup({
-        variables: { ...signupForm }
+        variables: {
+          ...signupForm,
+          username: signupForm.email.split('@')[0]
+        }
       });
       Auth.login(data.signup.token);
     } catch (err) {
@@ -34,9 +37,15 @@ const Login = () => {
     <div>
       <form className="search-form" onSubmit={handleSignup}>
         <TextInput
-          label="Username"
-          name="username"
-          value={signupForm.username}
+          label="First Name"
+          name="firstName"
+          value={signupForm.firstName}
+          onChange={handleChange}
+        />
+        <TextInput
+          label="Last Name"
+          name="lastName"
+          value={signupForm.lastName}
           onChange={handleChange}
         />
         <TextInput
@@ -54,7 +63,7 @@ const Login = () => {
         />
         <Button>Sign Up</Button>
       </form>
-      {error && <p>User already exists! Use login</p>}
+      {error && <p>Email already in use. Select login to access your profile.</p>}
     </div>
   )
 }

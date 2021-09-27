@@ -7,17 +7,18 @@ const Nav = () => {
     e.preventDefault();
     Auth.logout();
   }
+
   return (
     <div>
-      <Navbar alignLinks="left" brand={<a href="/" className="hover-el">Health Tracker</a>} centerLogo className="teal">
-        <SideNav trigger={<p className="hover-el">&larr; Menu</p>}>
+      <Navbar alignLinks="left" brand={<a href="/" className="hover-el">Health Companion</a>} centerLogo className="teal">
+        <SideNav trigger={<p className="hover-el pulse">&larr; Menu</p>}>
           {Auth.loggedIn() ? (
             <>
-              <SideNavItem
+              <SideNavItem className="user-info"
                 user={{
                   background: "images/heart.jpg",
-                  email: 'email@email.com',
-                  name: 'My Name'
+                  email: Auth.getProfile().data.email,
+                  name: Auth.getProfile().data.firstName + " " + Auth.getProfile().data.lastName
                 }}
                 userView
               />
