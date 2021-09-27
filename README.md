@@ -1,4 +1,4 @@
-# Health Tracker
+# Health Companion
 
 ## Table of Contents
 * [Deployed](#deployed)
