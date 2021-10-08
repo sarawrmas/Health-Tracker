@@ -7,8 +7,8 @@ const Home = () => {
       <Slider
         options={{
           duration: 300,
-          height: 800,
-          indicators: true
+          height: 900,
+          indicators: false
         }}
       >
         <Slide image={<img alt="Fruits and vegetables" src="images/produce.jpg" />}>

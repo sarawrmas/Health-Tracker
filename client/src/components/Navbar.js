@@ -1,6 +1,7 @@
 import React from 'react';
 import { SideNav, SideNavItem, Navbar } from 'react-materialize'
 import Auth from '../utils/auth';
+// import MenuIcon from '../assets/icons/menu.png';
 
 const Nav = () => {
   const logout = (e) => {
@@ -11,7 +12,9 @@ const Nav = () => {
   return (
     <div>
       <Navbar alignLinks="left" brand={<a href="/" className="hover-el">Health Companion</a>} centerLogo className="teal">
-        <SideNav trigger={<p className="hover-el pulse">&larr; Menu</p>}>
+        <SideNav trigger={
+          <i className="large material-icons hover-el">menu</i>
+        }>
           {Auth.loggedIn() ? (
             <>
               <SideNavItem className="user-info"
@@ -29,7 +32,10 @@ const Nav = () => {
           )}
           <SideNavItem divider />
           <SideNavItem href="/workout-search">Search Workouts</SideNavItem>
-          <SideNavItem href="/meal-planner">Plan Meals</SideNavItem>
+          <SideNavItem href="/my-sets">My Workout Sets</SideNavItem>
+          <SideNavItem divider />
+          <SideNavItem href="/meal-planner">Search Meals</SideNavItem>
+          <SideNavItem href="/my-meals">My Meal Plan</SideNavItem>
         </SideNav>
       </Navbar>
     </div>

@@ -61,7 +61,7 @@ const Login = () => {
           value={signupForm.password}
           onChange={handleChange}
         />
-        <Button>Sign Up</Button>
+        <Button className="waves-effect">Sign Up</Button>
       </form>
       {error && <p>Email already in use. Select login to access your profile.</p>}
     </div>

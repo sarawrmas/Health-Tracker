@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import M from "materialize-css";
-import { Container, Col, Row, Button, Select, TextInput, Tabs, Tab } from 'react-materialize';
+import { Container, Col, Row, Button, Select, TextInput, Tabs, Tab, DatePicker } from 'react-materialize';
 import ResultCollection from '../components/Collection';
 
 const Meal = () => {
@@ -104,7 +104,7 @@ const Meal = () => {
                 placeholder="Chicken, Lentils, Smoothie..."
                 onChange={(e) => setSearchInput(e.target.value)}
               />
-              <Button>Find</Button>
+              <Button className="waves-effect">Find</Button>
             </form>
             </Tab>
             <Tab idx="diet-search" title="By diet">
@@ -118,7 +118,7 @@ const Meal = () => {
                   </option>
                 ))}
               </Select>
-              <Button>Find</Button>
+              <Button className="waves-effect">Find</Button>
             </form>
             </Tab>
           </Tabs>

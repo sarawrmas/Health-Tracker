@@ -7,6 +7,8 @@ import Nav from './components/Navbar';
 import Login from './pages/Login';
 import Workout from './pages/Workout';
 import Meal from './pages/Meal';
+import SavedSets from './pages/SavedSets';
+import SavedMeals from './pages/SavedMeals'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -38,6 +40,9 @@ function App() {
           <Route exact path="/login" component={Login} />
           <Route exact path="/workout-search" component={Workout} />
           <Route exact path="/meal-planner" component={Meal} />
+          <Route exact path="/my-sets" component={SavedSets} />
+          <Route exact path="/my-meals" component={SavedMeals} />
+          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
         </Switch>
       </>
       </Router>

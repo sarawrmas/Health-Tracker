@@ -48,7 +48,7 @@ const Login = () => {
           value={loginForm.password}
           onChange={handleChange}
         />
-        <Button>Log In</Button>
+        <Button className="waves-effect">Log In</Button>
       </form>
       {error && <p>Login failed! Check credentials</p>}
     </div>

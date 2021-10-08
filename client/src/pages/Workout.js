@@ -100,7 +100,7 @@ const Workout = () => {
                   </option>
                 ))}
               </Select>
-              <Button>Find</Button>
+              <Button className="waves-effect">Find</Button>
             </form>
             </Tab>
           <Tab idx="equipment-search" title="Equipment">
@@ -114,7 +114,7 @@ const Workout = () => {
                   </option>
                 ))}
               </Select>
-              <Button>Find</Button>
+              <Button className="waves-effect">Find</Button>
             </form>
             </Tab>
             </Tabs>

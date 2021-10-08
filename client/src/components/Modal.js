@@ -1,9 +1,10 @@
 import React from 'react';
 import { prettifyString } from '../utils/helpers';
-import { Table } from 'react-materialize';
+import { Table, Button, Dropdown } from 'react-materialize';
 import M from "materialize-css";
+import { Link } from 'react-router-dom';
 
-const MealModal = (props) => {
+const ModalDiv = (props) => {
   const { currentResult, type } = props
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -39,7 +40,8 @@ const MealModal = (props) => {
                 </tr>
               </tbody>
             </Table>
-            <a href={`${currentResult.url}`} target="_blank" rel="noreferrer" className="hover-el">View full recipe &rarr;</a>
+            <a href={`${currentResult.url}`} target="_blank" rel="noreferrer" className="hover-el">View full recipe &rarr;</a><br />
+            <Link to="/my-meals"><Button className="waves-effect">Add to Plan</Button></Link>
           </>
         ) : (
           <>
@@ -62,6 +64,14 @@ const MealModal = (props) => {
                 </tr>
               </tbody>
             </Table>
+            {/* <Link to="/my-sets"> */}
+            <Dropdown
+              id="my-sets-dropdown"
+              trigger={<Button className="waves-effect">Add to Set</Button>}
+            >
+              
+            </Dropdown>
+              {/* </Link> */}
           </>
         )}
       </div>
@@ -69,4 +79,4 @@ const MealModal = (props) => {
   )
 }
 
-export default MealModal;
+export default ModalDiv;

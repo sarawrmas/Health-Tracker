@@ -7,7 +7,6 @@ const ResultCollection = (props) => {
   const { resultList, resultLength, paginate, searchType } = props;
   const pageLength = Math.ceil(resultLength / 20)
 
-
   return (
     <div>
       <Container>
@@ -18,9 +17,7 @@ const ResultCollection = (props) => {
               {resultList.map(results => (
                 <CollectionItem key={results.id}>
                   <Modal
-                    actions={
-                      <Button modal="close">Close</Button>
-                    }
+                    actions={<Button modal="close" className="waves-effect">Close</Button>}
                     trigger={<a href="#modalId" id="modalId" className="hover-el teal-text">{prettifyString(results.name)}</a>}
                   >
                     <ModalDiv currentResult={results} type={searchType}/>
@@ -34,7 +31,6 @@ const ResultCollection = (props) => {
               leftBtn=""
               rightBtn=""
               onSelect={paginate}
-              className="purple-text"
             >
           </Pagination>
         </Row>

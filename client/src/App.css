@@ -6,10 +6,45 @@
   font-size: 60px;
 }
 
+.meal-plan-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.meal-plan-header p {
+  margin-right: 20px;
+  font-size: 40px;
+}
+
 .hover-el:hover {
   color: #e57373;
   font-weight: bold;
   transition: all .3s ease-in-out;
+}
+
+.diet-carousel {
+  display: flex;
+}
+
+.carousel-arrow {
+  font-size: 50px;
+  margin: 5%;
+}
+
+.carousel-div {
+  width: 100%;
+  height: 80vh;
+  margin-bottom: 20px;
+}
+
+.meal-box h2 {
+  font-size: 10vw;
+}
+
+.meal-day {
+  display: flex;
 }
 
 .search-form {
